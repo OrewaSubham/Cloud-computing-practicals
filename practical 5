@@ -1,0 +1,43 @@
+# Practical 5: Deploying a Static Website on AWS S3
+
+## Objective
+
+To host a static website using AWS S3 by configuring bucket permissions and enabling static website hosting.
+
+## Steps
+
+1. Log in to the AWS Management Console.
+
+2. Search for S3 in the top search bar and open the S3 Dashboard.
+
+3. Click on “Create Bucket”.
+
+   * Enter a unique bucket name
+   * Select a region
+   * Uncheck “Block all public access” and acknowledge
+
+4. Open the created bucket and upload website files (e.g., index.html).
+
+5. Make the uploaded files public.
+
+6. Go to the Properties tab and enable “Static Website Hosting”.
+
+   * Set index document as index.html
+
+7. Go to Permissions and add a bucket policy to allow public read access.
+
+8. Copy the bucket website endpoint URL and open it in a browser.
+
+## Code (index.html)
+
+<html>  
+  <head><title>My Website</title></head>  
+  <body>  
+    <h1>Hello World</h1>  
+    <p>This is my static website hosted on AWS S3.</p>  
+  </body>  
+</html>  
+
+## Result
+
+The static website was successfully deployed using AWS S3 and accessed through the website endpoint URL.
