@@ -1,0 +1,49 @@
+# Practical 6: Monitor Resources Using AWS CloudWatch
+
+## Objective
+
+To monitor EC2 instance performance using AWS CloudWatch and configure alerts using SNS.
+
+## Steps
+
+1. Log in to the AWS Management Console.
+
+2. Search for CloudWatch in the top search bar and open the CloudWatch Dashboard.
+
+3. Click on “Metrics” → EC2 → Per-Instance Metrics.
+
+4. Select the CPUUtilization metric for your EC2 instance and view the graph.
+
+5. Go to “Alarms” and click on “Create Alarm”.
+
+6. Select the metric:
+
+   * EC2 → Per-Instance Metrics → CPUUtilization
+   * Choose your instance
+
+7. Configure the condition:
+
+   * Threshold type: Static
+   * Condition: Greater than 70
+
+8. Configure notification using SNS:
+
+   * Create a new SNS topic
+   * Enter your email ID and confirm subscription
+
+9. Create the alarm and wait for it to be active.
+
+10. Test the alarm by increasing CPU usage on the EC2 instance:
+
+yes > /dev/null
+
+11. Wait for a few minutes and check:
+
+* Alarm state changes to ALARM
+* Email notification is received
+
+12. Stop the test by pressing CTRL + C in the terminal.
+
+## Result
+
+AWS CloudWatch successfully monitored the EC2 instance and triggered an alarm when CPU utilization exceeded the defined threshold.
