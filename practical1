@@ -1,0 +1,30 @@
+
+ ✅ Steps to Provision Infrastructure via AWS Console
+
+1. **Log In:** Open the **AWS Management Console**.
+
+2. **Open EC2:** Search **EC2** in the top bar and go to the dashboard.
+
+3. **Launch Instance:** Click **“Launch Instance”**.
+
+4. **Select AMI:** Choose **Amazon Linux AMI**.
+
+5. **Configure Network:**
+
+   * Allow **HTTP (Port 80)**
+   * Allow **SSH (Port 22)**
+   * Source: `0.0.0.0/0`
+
+6. **Add User Data Script:**
+
+   * Go to **Advanced Details**
+   * Paste script to install **Apache (httpd)**
+
+7. **Launch Instance:** Click **Launch** and wait until status is **Running**.
+
+8. **Verify Setup:**
+
+   * Copy **Public IPv4 address**
+   * Paste in browser → Web server should load
+
+
