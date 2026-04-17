@@ -1,0 +1,47 @@
+# Practical 3: Set Up a VPC
+
+## Objective
+
+To create and configure a Virtual Private Cloud (VPC) with public and private subnets and deploy EC2 instances.
+
+## Steps
+
+1. Log in to the AWS Management Console.
+
+2. Search for VPC in the top search bar and open the VPC Dashboard.
+
+3. Click on “Create VPC” and choose “VPC only”.
+
+   * Name: My-VPC
+   * IPv4 CIDR: 10.0.0.0/16
+
+4. Create Subnets:
+
+   * Public Subnet: 10.0.1.0/24
+   * Private Subnet: 10.0.2.0/24
+
+5. Create an Internet Gateway:
+
+   * Name: My-IGW
+   * Attach it to My-VPC
+
+6. Configure Route Table for Public Subnet:
+
+   * Add route: 0.0.0.0/0 → Internet Gateway
+   * Associate with Public Subnet
+
+7. Launch EC2 Instance in Public Subnet:
+
+   * Enable auto-assign public IP
+   * Allow SSH access
+
+8. Launch EC2 Instance in Private Subnet:
+
+   * Disable auto-assign public IP
+   * Allow SSH only from public instance
+
+9. (Optional) Create NAT Gateway for private subnet internet access.
+
+## Result
+
+The VPC was successfully created with public and private subnets, and EC2 instances were launched in both subnets.
