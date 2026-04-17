@@ -1,0 +1,43 @@
+2. # Practical 2: Launch Your First EC2 Instance
+
+## Objective
+
+To deploy and access a virtual machine on AWS using EC2.
+
+## Steps
+
+1. Log in to the AWS Management Console.
+
+2. Search for EC2 in the top search bar and open the EC2 Dashboard.
+
+3. Click on “Launch Instance”.
+
+4. Configure the instance:
+
+   * Name: My-EC2
+   * AMI: Amazon Linux 2
+   * Instance Type: t2.micro
+
+5. Create a key pair and download the `.pem` file.
+
+6. Configure the security group:
+
+   * Allow SSH (Port 22) from My IP
+   * Allow HTTP (Port 80) from 0.0.0.0/0
+
+7. Click “Launch Instance” and wait until the instance state becomes Running.
+
+8. Connect to the instance using SSH:
+
+   chmod 400 key.pem
+   ssh -i key.pem ec2-user@your-public-ip
+
+9. Verify the connection by running:
+
+   whoami
+
+   Output: ec2-user
+
+## Result
+
+The EC2 instance was successfully launched and accessed using SSH.
